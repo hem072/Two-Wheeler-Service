@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Add User</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <!-- Custom CSS -->
+    <link href="../dist/css/two-wheeler.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="container-fluid" id="add-user-container">
+
+        <div class="page-header text-center">
+            
+                    <h1>Add New User</h1>
+                    
+        </div><!--Page Header-->
+        
+         <div class="row">
+        
+                    <div class="col-md-3">
+                    </div>
+   
+                    <div class="col-md-6">
+                    <p class="lead">Enter the user's details in the following fields</p>
+                    <div class="panel panel-default">
+
+				    <div class="panel-body">
+                    <form id="add-user-form">
+
+
+                            <div class="form-group">
+
+                                <label for="formFName">First Name</label>
+                                <input type="text" id="formFName" class="form-control" name="formFName">
+
+                            </div>
+                        
+                            
+                            <div class="form-group">
+
+                                <label for="formLName">Last Name</label>
+                                <input type="text" id="formLName" class="form-control" name="formLName">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="formEmail">Email</label>
+                                <input type="email" id="formEmail" class="form-control" name="formEmail">
+                                
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="formPhone">Mobile Number</label>
+                                <input type="text" id="formPhone" class="form-control" name="formPhone">
+
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="formDOB">Date of Birth</label>
+                                <input type="date" id="formDOB" class="form-control" id="formDOB" name="formDOB">
+                            </div>
+                        
+                            <div class="form-group">
+                                <label for="formUsrName">Username</label>
+                                <input type="text" id="formUsrName" class="form-control" name="formUsrName">
+                            </div>
+                        
+                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
+                        </div>
+                    </div>
+                </div><!--end of col-md-6-->
+             
+        
+        
+    </div><!--.container-->
+
+        
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--Validate Plugin-->
+        <script src="../dist/js/jquery.validate.js">  </script>
+        <script src="../dist/js/additional-methods.js"></script>
+    <!--Form Validation-->
+    <script src="../dist/js/add-user.js"></script>
+    
+
+</body>
+
+</html>

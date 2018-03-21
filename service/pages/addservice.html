@@ -1,0 +1,143 @@
+<?php
+
+
+include_once 'database_connect.php';
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Add User</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="../dist/css/two-wheeler.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="container-fluid" id="add-user-container">
+
+        <div class="page-header text-center">
+            
+                    <h1>Add New Service</h1>
+                    
+        </div><!--Page Header-->
+        
+         <div class="row">
+        
+                    
+                    <div class="col-md-3">
+                    </div>
+                    
+                    <div class="col-md-6">
+                    <p class="lead">Enter the service details in the following fields</p>
+                    <div class="panel panel-default">
+
+				    <div class="panel-body">
+                    <form id="add-serv-form">
+
+
+                            <div class="form-group">
+
+                                <label for="formSName">Service Name</label>
+                                <input type="text" id="formSName" class="form-control" name="formSName">
+
+                            </div>
+                            
+                            <div class="form-group">
+
+                                <label for="formSCost">Service Cost</label>
+                                <span class="input-group-addon"><i class="fa fa-inr"></i></span>
+                                <input type="text" id="formSCost" class="form-control" name="formSCost">
+                                
+                            </div>
+                        
+                            <div class="form-group">
+
+                                <label for="formSTime">Service Time(in hrs)</label>
+                                <input type="text" id="formSTime" class="form-control" name="formSTime">
+                                
+                            </div>
+                        
+                            <div class="form-group">
+
+                                <label for="formSType">Service Type</label>
+                                <br>
+                                <select class="form-control" id="serviceType" name="serviceType">
+                                 <option disabled selected value="">Select a service type</option>
+                                  <option>Exterior</option>
+                                  <option>Engine</option>
+                                  <option>Fluids</option>
+                                  <option>Tyre</option>
+                                  <option>Electrical</option>
+                                </select>
+                                
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
+                        </div>
+                        </div>
+                </div><!--end of col-md-6-->
+             
+        
+        
+    </div><!--.container-->
+
+        
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--Validate Plugin-->
+        <script src="../dist/js/jquery.validate.js">  </script>
+        <script src="../dist/js/additional-methods.js"></script>
+    <!--Form Validation-->
+    <script src="../dist/js/add-service.js"></script>
+
+</body>
+
+</html>
+<?php
+$query="insert into addservice values('".$_POST['formSName']."','".$_POST['formSCost']."','".$_POST['formSTime']."','".$_POST['serviceType']."')";
+if(mysql_query($query))
+{
+?>
+<script>alert("insered");</script>
+<?php
+
+
+
+}
+
+
+
+
+?>

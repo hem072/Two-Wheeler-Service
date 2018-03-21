@@ -1,0 +1,140 @@
+<?php
+
+include_once 'database_connect.php';
+session_start();
+if(isset($_SESSION['user']) && $_SESSION['userid']==session_id())
+{
+ 
+$user=$_SESSION['user'];
+
+
+}
+else
+{
+	header("Location:Home-Page.html");
+}
+?>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Modern Business - Start Bootstrap Template</title>
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="../bower_components/bootstrap/dist/css/two-wheeler.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+
+     <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+
+
+   
+</head>
+<body class="customlogin">
+<!-- Page Content -->
+
+
+<a class="success" href="logout.php">LOGOUT</a>
+<a class="success" href="bookslot.php">Bookslot</a>
+<a class="success" href="change.php">PASs</a>
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">My Profile
+                    <small></small>
+                </h1>
+				
+				<?php
+				$res=mysql_query("SELECT * FROM userreg WHERE userid='$user'");
+				while($row=mysql_fetch_array($res))
+				{
+					
+					
+			
+				
+			?>
+              	<ol class="breadcrumb">
+  					<li class="breadcrumb-item"><a href="#">Home</a></li>
+  					<li class="breadcrumb-item active">Library</li>
+				</ol>          
+		</div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-1"></div>
+             <div class="col-lg-10">
+             	<div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Details
+                        </div>
+                        <div class="panel-body">
+	                        <div class="row">
+	                        	<div class="col-md-4">
+	                        		<div class="form-group">
+	                        		<label> User Name:</label> <i class="form-control-static"><?php echo $row['username']; ?> </i>
+	                        		</div>
+	                        		
+	                        		<div class="form-group">
+				<label> First Name:</label><i class="form-control-static"><?php echo $row['firstname']; } ?> </i>
+	                        		</div>
+	                        	</div>
+	                        	
+	                        	<div class="col-md-4">
+	                        		<div class="form-group">
+	                        		<label> Email Id:</label> <i class="form-control-static"></i>
+	                        		</div>
+	                        		
+	                        		<div class="form-group">
+	                        		<label> Contact Number:</label> <i class="form-control-static"></i>
+	                        		</div>
+	                        	</div>
+	                        	
+	                        	<div class="col-md-4">
+	                        		<div class="form-group">
+	                        		<label> addressline1:</label> <i class="form-control-static"></i>
+	                        		</div>
+	                        		
+	                        		<div class="form-group">
+	                        		<label> addressline2:</label> <i class="form-control-static"></i>
+	                        		</div>
+	                        	</div>
+	                        	
+	                        </div>
+	           			 
+                        </div>
+                        
+                    </div>   
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2017</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    </body>
+    </html>
